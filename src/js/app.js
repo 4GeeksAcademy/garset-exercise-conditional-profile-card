@@ -37,7 +37,7 @@ function render(variables = {}) {
           <h2>${variables.role}</h2>
           <h3>${variables.country} , ${variables.city}</h3>
           
-          <ul class="socialMediaPosition" >
+          <ul class="socialMediaPosition">
             <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
             <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
@@ -45,6 +45,16 @@ function render(variables = {}) {
           </ul>
         </div>
     `;
+  const socialBar = document.querySelector(".socialMediaPosition");
+  if (socialBar) {
+    const position = variables.socialMediaPosition || "position-left";
+    const align = position.includes("right") ? "flex-end" : "flex-start";
+    socialBar.style.display = "flex";
+    socialBar.style.justifyContent = align;
+    socialBar.style.listStyle = "none";
+    socialBar.style.padding = "0";
+    socialBar.style.gap = "10px"; // Espacio entre íconos
+  }
 }
 
 /**
