@@ -45,7 +45,7 @@ function render(variables = {}) {
               </ul>
             </div>
         `;
-}
+
   const socialBar = document.querySelector(".socialMediaPosition");
   if (socialBar) {
     const position = variables.socialMediaPosition || "position-left";
